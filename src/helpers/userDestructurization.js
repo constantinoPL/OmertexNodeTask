@@ -3,6 +3,4 @@ const userDstructurization = (user) => ({
   refreshToken: user.refreshToken,
 });
 
-module.exports = {
-  userDstructurization,
-};
+module.exports = userDstructurization;
