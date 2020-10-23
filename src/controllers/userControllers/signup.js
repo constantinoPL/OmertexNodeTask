@@ -11,7 +11,7 @@ const signup = async (req, res) => {
   const { user_id, password } = req.body;
 
   if (user_id && password) {
-    const temp = user_id.replace(/\+?[\d\(\)-\s]{5,18}/, '');
+    const temp = user_id.replace(/\+?[\d()-\s]/g, '');
 
     let type_user_id;
 
