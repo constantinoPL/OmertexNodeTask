@@ -1,7 +1,7 @@
 const bcrypt = require('bcrypt');
 require('dotenv').config();
 
-const { jwtToken } = process.env;
+const User = require('../../models/userModel');
 
 const saltRounds = process.env.saltRounds ?? 10;
 
