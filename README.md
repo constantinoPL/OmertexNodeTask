@@ -2,7 +2,7 @@
 
 для старта 
 
-переименовать .env copy в .env \n
+переименовать .env copy в .env и 
 npm start
 
 
