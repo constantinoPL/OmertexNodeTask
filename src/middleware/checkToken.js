@@ -33,6 +33,7 @@ const checkToken = (req, res, next) => {
       return res.sendStatus(500);
     });
   } catch (e) {
+    console.log(e.message);
     return res.sendStatus(500);
   }
   return res.sendStatus(500);

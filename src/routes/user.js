@@ -2,6 +2,7 @@ const express = require('express');
 
 const signup = require('../controllers/userControllers/signup');
 const login = require('../controllers/userControllers/login');
+const info = require('../controllers/userControllers/info');
 
 const checkToken = require('../middleware/checkToken');
 
