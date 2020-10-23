@@ -22,6 +22,7 @@ const checkToken = (req, res, next) => {
         await user.save();
 
         req.body.id = decoded.id;
+        req.body.token = user.accessToken;
         next();
       } catch (error) {
         if (error.message === 'TokenExpiredError: jwt expired') {
