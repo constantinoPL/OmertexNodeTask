@@ -1,0 +1,11 @@
+PORT=3000
+
+DB_URL=mongodb://localhost:27017/OmertexNodeTask
+
+saltRounds=10
+
+jwtToken=0d37accaf001e6db3becf648964251048db2a9aa946e384134f928414bee61e8fb5cbb1fe3a31d759eea6f3e03c9ab028e0d7b75c2ed22cee8b754be5971f871
+jwtRefreshToken=275f7e727dea4ad39d7f4a6218509ea8b74630d28cb1b4dc7858f1d29250a8e6f6b058e4c3fd457507bf97341037a285aece282604cd8eb586c739251e9b10be
+
+tokenLife=300s
+refreshTokenLife=30d
