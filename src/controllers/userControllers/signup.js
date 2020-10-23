@@ -2,6 +2,7 @@ const bcrypt = require('bcrypt');
 require('dotenv').config();
 
 const User = require('../../models/userModel');
+const userDstructurization = require('../../helpers/userDestructurization');
 
 const saltRounds = process.env.saltRounds ?? 10;
 
