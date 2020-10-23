@@ -8,18 +8,17 @@ const { jwtToken } = process.env;
 
 const checkToken = (req, res, next) => {
   const userToken = req.headers.authorization.split(' ')[1];
+
   try {
     jwt.verify(userToken, jwtToken, async (err, decoded) => {
       try {
         if (err) throw new Error(err);
 
-        // console.log(decoded);
-
         const user = await User.findById(decoded.id);
         if (!user || user.accessToken !== userToken) {
           return res.sendStatus(403);
         }
-        user.accessToken = createToken('access', { id: user_id });
+        user.accessToken = createToken('access', { id: user.user_id });
         await user.save();
 
         req.body.id = decoded.id;
@@ -28,15 +27,13 @@ const checkToken = (req, res, next) => {
         if (error.message === 'TokenExpiredError: jwt expired') {
           return res.status(403).json({ message: 'TokenExpired' });
         }
-        return res.sendStatus(500);
+        console.log(error.message);
       }
-      return res.sendStatus(500);
     });
   } catch (e) {
     console.log(e.message);
     return res.sendStatus(500);
   }
-  return res.sendStatus(500);
 };
 
 module.exports = checkToken;
